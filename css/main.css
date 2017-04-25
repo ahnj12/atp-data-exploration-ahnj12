@@ -1,0 +1,39 @@
+.list-selected.active,.list-selected.active:hover {
+    border-color: darkgrey;
+}
+
+.list-round:hover {
+    cursor: pointer;
+}
+
+.list-round {
+    text-align: center;
+}
+
+label.active {
+    font-weight: bold;
+}
+
+#row-control1 {
+    margin-bottom: 4em;
+}
+
+#surface1 {
+    background-color: #427df4;
+    border-color: #427df4;
+}
+
+#surface2 {
+    background-color: #42f445;
+    border-color: #42f445;
+}
+
+#surface3 {
+    background-color: #f48342;
+    border-color: #f48342;
+}
+
+#show-result {
+    vertical-align: -webkit-baseline-middle;
+    padding-left: 1em;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment 2: Data Exploration</title>
+
+    <!--bootstrap styling-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <!--D3 CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.4/d3.min.js"></script>
+
+    <!-- Load jQuery library -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+<!-- Create a header that describes the project -->
+<header>
+    <div class="jumbotron container-fluid">
+        <div class="container">
+            <h1>Assignment 2: Data Exploration</h1>
+            <p>ATP Statistics</p>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <h2>chart</h2>
+        <p>Question: Do more aces mean more wins</p>
+        <p>
+            Show each 1000 masters tournament in the x axis
+        </p>
+        <p>
+            Y-axis is the number of aces
+        </p>
+        <p>
+            Control elements
+        </p>
+        <ul>
+            <li>Court type - 3 buttons</li>
+            <li>Winner/Loser - 3 buttons</li>
+            <li>Round - drop down</li>
+        </ul>
+        <div class="row" id="row-control1">
+            <div class="col-sm-6">
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-primary" id="surface1">
+                        <input value="Hard" type="radio" name="surface" autocomplete="off">Hard
+                    </label>
+                    <label class="btn btn-primary" id="surface2">
+                        <input value="Grass" type="radio" name="surface" autocomplete="off" >Grass
+                    </label>
+                    <label class="btn btn-primary" id="surface3">
+                        <input value="Clay" type="radio" name="surface" autocomplete="off">Clay
+                    </label>
+                    <label class="btn btn-primary active" id="surface0">
+                        <input value="false" type="radio" name="surface" autocomplete="off">All Surfaces
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="btn-group">
+                    <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle">Show <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a id="show-w">Winners</a></li>
+                        <li><a id="show-l">Losers</a></li>
+                        <li class="divider"></li>
+                        <li><a id="show-all">Winners & Losers</a></li>
+                    </ul>
+                    <span id="show-result">Winners & Losers</span>
+                </div>
+            </div>
+        </div>
+        <svg id="viz"></svg>
+        <div class="row" id="row-control2">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-12 col-md-8">
+                <ul class="list-group">
+                    <li class="list-group-item list-round list-selected active">Finals<input type="hidden" value="F" /></li>
+                    <li class="list-group-item list-round list-selected active">Semifinals<input type="hidden" value="SF" /></li>
+                    <li class="list-group-item list-round list-selected active">Quarterfinals<input type="hidden" value="QF" /></li>
+                    <li class="list-group-item list-round list-selected active">Round of 16<input type="hidden" value="R16" /></li>
+                    <li class="list-group-item list-round list-selected active">Round of 32<input type="hidden" value="R32" /></li>
+                    <li class="list-group-item list-round list-selected">Round of 64<input type="hidden" value="R64" /></li>
+                    <li class="list-group-item list-round list-selected">Round of 128<input type="hidden" value="R128" /></li>
+                </ul>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+</main>
+
+</body>
+
+</html>
