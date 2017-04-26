@@ -18,6 +18,10 @@ label.active {
     margin-bottom: 4em;
 }
 
+#row-control2 {
+    margin-top: 2em;
+}
+
 #surface1 {
     background-color: #427df4;
     border-color: #427df4;
@@ -36,4 +40,31 @@ label.active {
 #show-result {
     vertical-align: -webkit-baseline-middle;
     padding-left: 1em;
+    padding-right: 1em;
+}
+
+#show-selector {
+    padding: 1em;
+    border: 1px solid darkgray;
+    width: 100%;
+}
+
+#show-result {
+    font-weight: bold;
+}
+
+#surface-buttons label {
+    width: 23%;
+}
+
+#surface-buttons {
+    width: 100%;
+}
+
+#surface-buttons-container {
+    padding: 1em;
+}
+
+.paragraphs {
+    margin: 1.5em 0;
 }

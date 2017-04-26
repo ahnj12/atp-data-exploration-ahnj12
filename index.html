@@ -35,25 +35,11 @@
 
 <main>
     <div class="container">
-        <h2>chart</h2>
-        <p>Question: Do more aces mean more wins</p>
-        <p>
-            Show each 1000 masters tournament in the x axis
-        </p>
-        <p>
-            Y-axis is the number of aces
-        </p>
-        <p>
-            Control elements
-        </p>
-        <ul>
-            <li>Court type - 3 buttons</li>
-            <li>Winner/Loser - 3 buttons</li>
-            <li>Round - drop down</li>
-        </ul>
+        <h2>Aces in ATP Tournaments</h2>
+        <p>Question: When did ATP players hit to most aces in 2016 Masters and Grand Slams?</p>
         <div class="row" id="row-control1">
-            <div class="col-sm-6">
-                <div class="btn-group" data-toggle="buttons">
+            <div class="col-sm-6" id="surface-buttons-container">
+                <div id="surface-buttons" class="btn-group" data-toggle="buttons">
                     <label class="btn btn-primary" id="surface1">
                         <input value="Hard" type="radio" name="surface" autocomplete="off">Hard
                     </label>
@@ -63,25 +49,31 @@
                     <label class="btn btn-primary" id="surface3">
                         <input value="Clay" type="radio" name="surface" autocomplete="off">Clay
                     </label>
-                    <label class="btn btn-primary active" id="surface0">
-                        <input value="false" type="radio" name="surface" autocomplete="off">All Surfaces
+                    <label class="btn btn-primary active" id="surface0" style="width: 30%">
+                        <input value="All" type="radio" name="surface" autocomplete="off">All Surfaces
                     </label>
                 </div>
             </div>
             <div class="col-sm-6">
-                <div class="btn-group">
+                <div class="btn-group" id="show-selector">
                     <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle">Show <span class="caret"></span></button>
                     <ul class="dropdown-menu">
-                        <li><a id="show-w">Winners</a></li>
-                        <li><a id="show-l">Losers</a></li>
+                        <li><a id="w" class="show-result">Winners</a></li>
+                        <li><a id="l" class="show-result">Losers</a></li>
                         <li class="divider"></li>
-                        <li><a id="show-all">Winners & Losers</a></li>
+                        <li><a id="wl" class="show-result">Winners & Losers</a></li>
                     </ul>
                     <span id="show-result">Winners & Losers</span>
                 </div>
             </div>
         </div>
-        <svg id="viz"></svg>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12" style="text-align: center;">
+                    <svg id="viz"></svg>
+                </div>
+            </div>
+        </div>
         <div class="row" id="row-control2">
             <div class="col-sm-2"></div>
             <div class="col-sm-12 col-md-8">
@@ -96,6 +88,46 @@
                 </ul>
             </div>
             <div class="col-sm-2"></div>
+        </div>
+        <div class="row paragraphs">
+            <div class="col-sm-12">
+                The data I used to visualize is statistics from tennis matches of the 2016 ATP world tennis tour.
+                For this particular visualization, I chose to show the number of aces hit by players at masters and
+                grand slam tournaments. In order to show this information, I utilized three visual encodings:
+                position, length, and color. I used position to encode the value of aces for each tournament
+                because it is main quantitative value for this visualization. I wanted viewers to be able to
+                quickly see and comprehend the total number of aces hit. The length encoding is found in the
+                height of each bar in the graph. I chose this encoding because it would allow viewers to quickly
+                comprehend the differences between the number of aces between tournaments. In order to aid in this
+                comparison, the number of aces for each tournament was sorted from smallest to largest. By sorting,
+                it tells the reader that the right value is greater than the left value which helps when the heights
+                are very close. The color on each bar graph represents the court surface that each tournament was.
+                Green was for grass courts, brown was for clay, and blue was for hard surfaces. Using a bar graph
+                with this encoding helped as there was more area for each piece of data to be colored, making each
+                court surface easy to identify.
+            </div>
+        </div>
+        <div class="row paragraphs">
+            <div class="col-sm-12">
+                The first control element is the row of colored buttons. This control allows the viewer to filter
+                which tournaments are shown based on court surface. I chose this button layout versus a drop down
+                menu because I wanted to also use this not only as a control but a color key to the different colors
+                in the bar graph. To help show that only one button can be pressed at a time, the buttons are grouped
+                together and only the selected button will have bolded text. This control allows the user to ask the
+                question of how court surface types affect the number of aces hit by players? The second control
+                element is a drop down menu letting the viewer control whether the graph shows values from winners,
+                losers, or both. A drop down menu was used as only one option can be picked at a time, and bolded
+                text on the side of the drop down menu reflects what filter has been chosen. Using this control,
+                the user is able to ask the question: do winners or losers hit more aces in matches? The final control
+                is a list of the different round of the tournament. The user is able to toggle each element of this
+                list on or off. The control is initially set without some of the options selected because some of
+                the tournaments contain more rounds than the others, making an unfair comparison. This control
+                allows the user to ask the question of how many aces were hit in finals, RO32, or quarterfinals
+                and semifinals? With all these different control elements, the user can begin to ask more complex
+                questions. For example, in the finals of hard court tennis tournaments, which tournament had the
+                most number of aces hit by losers? Another example is, in the RO32 and semifinals of clay courts,
+                which tournament had the most number of aces hit by both winners and losers?
+            </div>
         </div>
     </div>
 </main>
